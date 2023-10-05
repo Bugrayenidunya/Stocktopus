@@ -142,18 +142,18 @@
 		13596D1E2ACF597C00A002E2 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				13596D1F2ACF598C00A002E2 /* Queries */,
 				13596D222ACF5A7700A002E2 /* Schema */,
-				13596D1F2ACF598C00A002E2 /* Qıeries */,
 			);
 			path = API;
 			sourceTree = "<group>";
 		};
-		13596D1F2ACF598C00A002E2 /* Qıeries */ = {
+		13596D1F2ACF598C00A002E2 /* Queries */ = {
 			isa = PBXGroup;
 			children = (
 				13596D202ACF59B300A002E2 /* Queries.graphql */,
 			);
-			path = "Qıeries";
+			path = Queries;
 			sourceTree = "<group>";
 		};
 		13596D222ACF5A7700A002E2 /* Schema */ = {
