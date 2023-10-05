@@ -13,6 +13,8 @@
 		13596CF32ACF3F4200A002E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13596CF22ACF3F4200A002E2 /* Assets.xcassets */; };
 		13596CF62ACF3F4200A002E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13596CF42ACF3F4200A002E2 /* LaunchScreen.storyboard */; };
 		13596D012ACF3F4200A002E2 /* StocktopusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13596D002ACF3F4200A002E2 /* StocktopusTests.swift */; };
+		13596D212ACF59B300A002E2 /* Queries.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 13596D202ACF59B300A002E2 /* Queries.graphql */; };
+		13596D242ACF5A9100A002E2 /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 13596D232ACF5A9100A002E2 /* schema.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +37,8 @@
 		13596CF72ACF3F4200A002E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		13596CFC2ACF3F4200A002E2 /* StocktopusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StocktopusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		13596D002ACF3F4200A002E2 /* StocktopusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocktopusTests.swift; sourceTree = "<group>"; };
+		13596D202ACF59B300A002E2 /* Queries.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = Queries.graphql; sourceTree = "<group>"; };
+		13596D232ACF5A9100A002E2 /* schema.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +80,7 @@
 		13596CE82ACF3F4100A002E2 /* Stocktopus */ = {
 			isa = PBXGroup;
 			children = (
+				13596D1E2ACF597C00A002E2 /* API */,
 				13596D192ACF407300A002E2 /* App */,
 				13596D1B2ACF409E00A002E2 /* Modules */,
 				13596D1A2ACF409500A002E2 /* Resources */,
@@ -124,6 +129,31 @@
 				13596CF42ACF3F4200A002E2 /* LaunchScreen.storyboard */,
 			);
 			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
+		13596D1E2ACF597C00A002E2 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				13596D222ACF5A7700A002E2 /* Schema */,
+				13596D1F2ACF598C00A002E2 /* Qıeries */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		13596D1F2ACF598C00A002E2 /* Qıeries */ = {
+			isa = PBXGroup;
+			children = (
+				13596D202ACF59B300A002E2 /* Queries.graphql */,
+			);
+			path = "Qıeries";
+			sourceTree = "<group>";
+		};
+		13596D222ACF5A7700A002E2 /* Schema */ = {
+			isa = PBXGroup;
+			children = (
+				13596D232ACF5A9100A002E2 /* schema.json */,
+			);
+			path = Schema;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,6 +222,9 @@
 				Base,
 			);
 			mainGroup = 13596CDD2ACF3F4100A002E2;
+			packageReferences = (
+				13596D1D2ACF591100A002E2 /* XCRemoteSwiftPackageReference "apollo-ios" */,
+			);
 			productRefGroup = 13596CE72ACF3F4100A002E2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -207,6 +240,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13596D242ACF5A9100A002E2 /* schema.json in Resources */,
+				13596D212ACF59B300A002E2 /* Queries.graphql in Resources */,
 				13596CF62ACF3F4200A002E2 /* LaunchScreen.storyboard in Resources */,
 				13596CF32ACF3F4200A002E2 /* Assets.xcassets in Resources */,
 			);
@@ -516,6 +551,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		13596D1D2ACF591100A002E2 /* XCRemoteSwiftPackageReference "apollo-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apollographql/apollo-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = 13596CDE2ACF3F4100A002E2 /* Project object */;
 }
