@@ -1,0 +1,82 @@
+"""
+A directive used by the Apollo iOS client to annotate operations or fragments that should be used exclusively for generating local cache mutations instead of as standard operations.
+"""
+directive @apollo_client_ios_localCacheMutation on QUERY | MUTATION | SUBSCRIPTION | FRAGMENT_DEFINITION
+
+scalar Date
+
+type StockList {
+  data: [Stock!]!
+  has_more: Boolean!
+  cursor: String
+}
+
+type Stock {
+  locale: String
+  name: String!
+  ticker: String!
+  type: String
+  currency_name: String
+}
+
+type StockDetailWithAggregates {
+  ticker: String!
+  name: String!
+  market: String!
+  locale: String
+  primary_exchange: String
+  type: String!
+  active: Boolean!
+  currency_name: String
+  cik: String
+  composite_figi: String
+  share_class_figi: String
+  market_cap: Float
+  phone_number: String
+  address: StockDetailAddress
+  description: String
+  sic_code: String
+  sic_description: String
+  ticker_root: String
+  homepage_url: String
+  total_employees: Int
+  list_date: String
+  branding: StockDetailBranding
+  share_class_shares_outstanding: Float
+  weighted_shares_outstanding: Float
+  stockAggregates(timespan: String, range: Int, startDate: Date, endDate: Date, limit: Int): StockAggregates
+}
+
+type StockDetailAddress {
+  address1: String
+  city: String!
+  state: String
+  postal_code: String
+}
+
+type StockDetailBranding {
+  logo_url: String
+  icon_url: String
+}
+
+type StockAggregates {
+  queryCount: Int
+  resultsCount: Int
+  results: [StockAggregatesResult]
+}
+
+type StockAggregatesResult {
+  v: Float
+  vw: Float
+  o: Float
+  c: Float
+  h: Float
+  l: Float
+  t: Float
+  n: Float
+}
+
+type Query {
+  stocks(limit: Int, cursor: String): StockList
+  stockDetail(ticker: String!): StockDetailWithAggregates
+}
