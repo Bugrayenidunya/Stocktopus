@@ -1,0 +1,13 @@
+query GetStocksByLimit($limit: Int) {
+  stocks(limit: $limit) {
+    data {
+      currency_name
+      locale
+      name
+      ticker
+      type
+    }
+    has_more
+    cursor
+  }
+}
