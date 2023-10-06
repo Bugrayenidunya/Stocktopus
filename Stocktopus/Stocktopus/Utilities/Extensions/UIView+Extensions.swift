@@ -8,6 +8,11 @@
 import UIKit
 
 extension UIView {
+    /// Add multiple sub views at once
+    func addSubViews(_ views: [UIView]) {
+        views.forEach({ addSubview($0) })
+    }
+    
     /// Setup your view's constaints
     func setConstraint(
         top: NSLayoutYAxisAnchor? = nil,
