@@ -29,28 +29,34 @@ final class NetworkManager: Networking {
     // MARK: Functions
     func fetch<T: GraphQLQuery>(query: T) -> AnyPublisher<T.Data?, NetworkError> {
         Future<T.Data?, NetworkError> { promise in
-           self.apolloClient.fetch(query: query) { result in
+            self.apolloClient.fetch(query: query, cachePolicy: .returnCacheDataAndFetch) { result in
                 switch result {
                 case .success(let graphQLResult):
-                    guard let data = graphQLResult.data else {
-                        
-                        if let errors = graphQLResult.errors {
-                            let error = NetworkError.graphQLErrors(errors, errors.generateErrorDescription())
-                            promise(.failure(error))
-                        } else {
-                            promise(.failure(NetworkError.invalidResponse))
-                        }
-                        
+                    guard graphQLResult.errors == nil else {
+                        let error = self.parse(errors: graphQLResult.errors!)
+                        promise(.failure(error))
                         return
                     }
                     
-                    promise(.success(data))
-                    
+                    if let data = graphQLResult.data {
+                        promise(.success(data))
+                    }
                 case .failure(let error):
                     promise(.failure(NetworkError.networkError(error)))
                 }
             }
         }
         .eraseToAnyPublisher()
+    }
+}
+
+// MARK: - Helpers
+private extension NetworkManager {
+    func parse(errors: [GraphQLError]) -> NetworkError {
+        if let response = errors.first?.extensions?["response"] as? [String: Any], let errorCode = response["status"] as? Int, errorCode == 429 {
+            return NetworkError.apiCallLimitExceeded
+        }
+        
+        return NetworkError.graphQLErrors(errors, errors.generateErrorDescription())
     }
 }
