@@ -40,6 +40,12 @@
 		13596D762AD174BC00A002E2 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13596D752AD174BC00A002E2 /* AlertManager.swift */; };
 		13596D782AD1EB3200A002E2 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13596D772AD1EB3200A002E2 /* Alert.swift */; };
 		13596D7A2AD1FD1A00A002E2 /* GetStockDetailForTicker.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 13596D792AD1FD1A00A002E2 /* GetStockDetailForTicker.graphql */; };
+		13596D812AD1FDF600A002E2 /* DetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13596D802AD1FDF600A002E2 /* DetailController.swift */; };
+		13596D832AD1FE0500A002E2 /* DetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13596D822AD1FE0500A002E2 /* DetailRouter.swift */; };
+		13596D852AD1FE6700A002E2 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13596D842AD1FE6700A002E2 /* DetailViewModel.swift */; };
+		13596D872AD1FE7200A002E2 /* DetailViewModelInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13596D862AD1FE7200A002E2 /* DetailViewModelInput.swift */; };
+		13596D892AD1FE7D00A002E2 /* DetailViewModelOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13596D882AD1FE7D00A002E2 /* DetailViewModelOutput.swift */; };
+		13596D8B2AD2016400A002E2 /* DetailBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13596D8A2AD2016400A002E2 /* DetailBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +94,12 @@
 		13596D752AD174BC00A002E2 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		13596D772AD1EB3200A002E2 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		13596D792AD1FD1A00A002E2 /* GetStockDetailForTicker.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = GetStockDetailForTicker.graphql; sourceTree = "<group>"; };
+		13596D802AD1FDF600A002E2 /* DetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailController.swift; sourceTree = "<group>"; };
+		13596D822AD1FE0500A002E2 /* DetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRouter.swift; sourceTree = "<group>"; };
+		13596D842AD1FE6700A002E2 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		13596D862AD1FE7200A002E2 /* DetailViewModelInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModelInput.swift; sourceTree = "<group>"; };
+		13596D882AD1FE7D00A002E2 /* DetailViewModelOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModelOutput.swift; sourceTree = "<group>"; };
+		13596D8A2AD2016400A002E2 /* DetailBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +185,7 @@
 		13596D1B2ACF409E00A002E2 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				13596D7B2AD1FDD400A002E2 /* Detail */,
 				13596D542AD0667800A002E2 /* Home */,
 				13596D1C2ACF40A500A002E2 /* LaunchScreen */,
 			);
@@ -343,6 +356,51 @@
 			path = AlertManager;
 			sourceTree = "<group>";
 		};
+		13596D7B2AD1FDD400A002E2 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				13596D7C2AD1FDDA00A002E2 /* Builder */,
+				13596D7D2AD1FDDE00A002E2 /* Router */,
+				13596D7E2AD1FDE200A002E2 /* View */,
+				13596D7F2AD1FDE500A002E2 /* ViewModel */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		13596D7C2AD1FDDA00A002E2 /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				13596D8A2AD2016400A002E2 /* DetailBuilder.swift */,
+			);
+			path = Builder;
+			sourceTree = "<group>";
+		};
+		13596D7D2AD1FDDE00A002E2 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				13596D822AD1FE0500A002E2 /* DetailRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		13596D7E2AD1FDE200A002E2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				13596D802AD1FDF600A002E2 /* DetailController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		13596D7F2AD1FDE500A002E2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				13596D842AD1FE6700A002E2 /* DetailViewModel.swift */,
+				13596D862AD1FE7200A002E2 /* DetailViewModelInput.swift */,
+				13596D882AD1FE7D00A002E2 /* DetailViewModelOutput.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -455,9 +513,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13596D872AD1FE7200A002E2 /* DetailViewModelInput.swift in Sources */,
 				13596D6C2AD075A700A002E2 /* SectionHeaderReusableView.swift in Sources */,
 				13596D712AD15D9400A002E2 /* String+Extensions.swift in Sources */,
 				13596D532AD0625200A002E2 /* API.swift in Sources */,
+				13596D832AD1FE0500A002E2 /* DetailRouter.swift in Sources */,
+				13596D852AD1FE6700A002E2 /* DetailViewModel.swift in Sources */,
 				13596D652AD06E2500A002E2 /* HomeCollectionViewCellDTO.swift in Sources */,
 				13596D672AD06E6F00A002E2 /* HomeCollectionViewCellProvider.swift in Sources */,
 				13596D512AD061FC00A002E2 /* Constant.swift in Sources */,
@@ -473,12 +534,15 @@
 				13596D482AD041C800A002E2 /* Array+Extension.swift in Sources */,
 				13596D582AD0669600A002E2 /* HomeViewModel.swift in Sources */,
 				13596D282ACF5D2E00A002E2 /* LoadingManager.swift in Sources */,
+				13596D812AD1FDF600A002E2 /* DetailController.swift in Sources */,
 				13596D732AD15E1800A002E2 /* HomeViewModelOutput.swift in Sources */,
 				13596D5C2AD066A400A002E2 /* HomeBuilder.swift in Sources */,
 				13596D6A2AD070F500A002E2 /* HomeSection.swift in Sources */,
 				13596D332AD0222600A002E2 /* NetworkManager.swift in Sources */,
+				13596D8B2AD2016400A002E2 /* DetailBuilder.swift in Sources */,
 				13596CEA2ACF3F4100A002E2 /* AppDelegate.swift in Sources */,
 				13596CEC2ACF3F4100A002E2 /* SceneDelegate.swift in Sources */,
+				13596D892AD1FE7D00A002E2 /* DetailViewModelOutput.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
