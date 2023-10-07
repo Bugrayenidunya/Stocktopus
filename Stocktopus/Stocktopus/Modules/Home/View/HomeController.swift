@@ -15,7 +15,7 @@ final class HomeController: UIViewController {
     typealias Snapshot = NSDiffableDataSourceSnapshot<HomeSection, HomeCollectionViewCellDTO>
     
     // MARK: Properties
-    private var viewModel: HomeViewModelInput
+    private let viewModel: HomeViewModelInput
     private var snapshot = NSDiffableDataSourceSnapshot<HomeSection, HomeCollectionViewCellDTO>()
     private var cancallables = Set<AnyCancellable>()
     private lazy var dataSource = generateDatasource()
