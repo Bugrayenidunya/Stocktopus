@@ -47,6 +47,7 @@ final class HomeController: UIViewController {
         super.viewDidLoad()
         
         commonInit()
+        viewModel.viewDidLoad()
     }
     
     // MARK: Init
@@ -58,6 +59,10 @@ final class HomeController: UIViewController {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        isReachedEnd(scrollView) ? viewModel.loadMoreStocks() : nil
     }
 }
 
@@ -73,6 +78,15 @@ extension HomeController: UICollectionViewDelegate {
 
 // MARK: - Helpers
 private extension HomeController {
+    func isReachedEnd(_ scrollView: UIScrollView) -> Bool {
+        let offsetY = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+        let screenHeight = scrollView.frame.size.height
+        let threshold: CGFloat = 100
+        
+        return offsetY + screenHeight > contentHeight - threshold
+    }
+    
     func commonInit() {
         setupView()
         setupSubscriptions()
