@@ -7,16 +7,24 @@ public class GetStocksByLimitQuery: GraphQLQuery {
   public static let operationName: String = "GetStocksByLimit"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query GetStocksByLimit($limit: Int) { stocks(limit: $limit) { __typename data { __typename currency_name locale name ticker type } } }"#
+      #"query GetStocksByLimit($limit: Int, $cursor: String) { stocks(limit: $limit, cursor: $cursor) { __typename data { __typename currency_name locale name ticker type } has_more cursor } }"#
     ))
 
   public var limit: GraphQLNullable<Int>
+  public var cursor: GraphQLNullable<String>
 
-  public init(limit: GraphQLNullable<Int>) {
+  public init(
+    limit: GraphQLNullable<Int>,
+    cursor: GraphQLNullable<String>
+  ) {
     self.limit = limit
+    self.cursor = cursor
   }
 
-  public var __variables: Variables? { ["limit": limit] }
+  public var __variables: Variables? { [
+    "limit": limit,
+    "cursor": cursor
+  ] }
 
   public struct Data: API.SelectionSet {
     public let __data: DataDict
@@ -24,7 +32,10 @@ public class GetStocksByLimitQuery: GraphQLQuery {
 
     public static var __parentType: ApolloAPI.ParentType { API.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
-      .field("stocks", Stocks?.self, arguments: ["limit": .variable("limit")]),
+      .field("stocks", Stocks?.self, arguments: [
+        "limit": .variable("limit"),
+        "cursor": .variable("cursor")
+      ]),
     ] }
 
     public var stocks: Stocks? { __data["stocks"] }
@@ -40,9 +51,13 @@ public class GetStocksByLimitQuery: GraphQLQuery {
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("data", [Datum].self),
+        .field("has_more", Bool.self),
+        .field("cursor", String?.self),
       ] }
 
       public var data: [Datum] { __data["data"] }
+      public var has_more: Bool { __data["has_more"] }
+      public var cursor: String? { __data["cursor"] }
 
       /// Stocks.Datum
       ///

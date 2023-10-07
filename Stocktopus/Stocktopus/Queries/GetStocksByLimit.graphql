@@ -1,6 +1,6 @@
-query GetStocksByLimit($limit: Int) {
-  stocks(limit: $limit) {
-    data {
+query GetStocksByLimit($limit: Int, $cursor: String) {
+  stocks(limit: $limit, cursor: $cursor) {
+      data {
       currency_name
       locale
       name
