@@ -10,5 +10,7 @@ import Foundation
 extension Constant {
     class API {
         static let baseUrl = "https://interview-api.dev-getmidas.com/"
+        static let fetchLimit = 50
+        static let invalidResponseMessage = "Invalid Response"
     }
 }
