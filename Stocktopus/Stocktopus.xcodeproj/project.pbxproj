@@ -37,6 +37,8 @@
 		13596D6F2AD1563E00A002E2 /* HomeViewModelInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13596D6E2AD1563E00A002E2 /* HomeViewModelInput.swift */; };
 		13596D712AD15D9400A002E2 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13596D702AD15D9400A002E2 /* String+Extensions.swift */; };
 		13596D732AD15E1800A002E2 /* HomeViewModelOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13596D722AD15E1800A002E2 /* HomeViewModelOutput.swift */; };
+		13596D762AD174BC00A002E2 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13596D752AD174BC00A002E2 /* AlertManager.swift */; };
+		13596D782AD1EB3200A002E2 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13596D772AD1EB3200A002E2 /* Alert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +84,8 @@
 		13596D6E2AD1563E00A002E2 /* HomeViewModelInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelInput.swift; sourceTree = "<group>"; };
 		13596D702AD15D9400A002E2 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		13596D722AD15E1800A002E2 /* HomeViewModelOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelOutput.swift; sourceTree = "<group>"; };
+		13596D752AD174BC00A002E2 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
+		13596D772AD1EB3200A002E2 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +196,7 @@
 		13596D252ACF5CEC00A002E2 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				13596D742AD174B300A002E2 /* AlertManager */,
 				13596D312ACFF91A00A002E2 /* NetworkManager */,
 				13596D262ACF5CF000A002E2 /* LoadingManager */,
 			);
@@ -254,6 +259,7 @@
 		13596D4F2AD061F100A002E2 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				13596D772AD1EB3200A002E2 /* Alert.swift */,
 				13596D522AD0625200A002E2 /* API.swift */,
 				13596D502AD061FC00A002E2 /* Constant.swift */,
 			);
@@ -324,6 +330,14 @@
 				13596D6B2AD075A700A002E2 /* SectionHeaderReusableView.swift */,
 			);
 			path = SectionHeaderReusableView;
+			sourceTree = "<group>";
+		};
+		13596D742AD174B300A002E2 /* AlertManager */ = {
+			isa = PBXGroup;
+			children = (
+				13596D752AD174BC00A002E2 /* AlertManager.swift */,
+			);
+			path = AlertManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -443,6 +457,8 @@
 				13596D652AD06E2500A002E2 /* HomeCollectionViewCellDTO.swift in Sources */,
 				13596D672AD06E6F00A002E2 /* HomeCollectionViewCellProvider.swift in Sources */,
 				13596D512AD061FC00A002E2 /* Constant.swift in Sources */,
+				13596D782AD1EB3200A002E2 /* Alert.swift in Sources */,
+				13596D762AD174BC00A002E2 /* AlertManager.swift in Sources */,
 				13596D562AD0668D00A002E2 /* HomeController.swift in Sources */,
 				13596D2E2ACF5E9700A002E2 /* UIView+Extensions.swift in Sources */,
 				13596D452AD0413B00A002E2 /* NetworkError.swift in Sources */,
