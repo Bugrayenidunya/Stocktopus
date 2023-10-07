@@ -29,6 +29,14 @@
 		13596D582AD0669600A002E2 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13596D572AD0669600A002E2 /* HomeViewModel.swift */; };
 		13596D5A2AD0669C00A002E2 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13596D592AD0669C00A002E2 /* HomeRouter.swift */; };
 		13596D5C2AD066A400A002E2 /* HomeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13596D5B2AD066A400A002E2 /* HomeBuilder.swift */; };
+		13596D632AD06A7C00A002E2 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13596D622AD06A7C00A002E2 /* HomeCollectionViewCell.swift */; };
+		13596D652AD06E2500A002E2 /* HomeCollectionViewCellDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13596D642AD06E2500A002E2 /* HomeCollectionViewCellDTO.swift */; };
+		13596D672AD06E6F00A002E2 /* HomeCollectionViewCellProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13596D662AD06E6F00A002E2 /* HomeCollectionViewCellProvider.swift */; };
+		13596D6A2AD070F500A002E2 /* HomeSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13596D692AD070F500A002E2 /* HomeSection.swift */; };
+		13596D6C2AD075A700A002E2 /* SectionHeaderReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13596D6B2AD075A700A002E2 /* SectionHeaderReusableView.swift */; };
+		13596D6F2AD1563E00A002E2 /* HomeViewModelInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13596D6E2AD1563E00A002E2 /* HomeViewModelInput.swift */; };
+		13596D712AD15D9400A002E2 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13596D702AD15D9400A002E2 /* String+Extensions.swift */; };
+		13596D732AD15E1800A002E2 /* HomeViewModelOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13596D722AD15E1800A002E2 /* HomeViewModelOutput.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +74,14 @@
 		13596D572AD0669600A002E2 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		13596D592AD0669C00A002E2 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		13596D5B2AD066A400A002E2 /* HomeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBuilder.swift; sourceTree = "<group>"; };
+		13596D622AD06A7C00A002E2 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		13596D642AD06E2500A002E2 /* HomeCollectionViewCellDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCellDTO.swift; sourceTree = "<group>"; };
+		13596D662AD06E6F00A002E2 /* HomeCollectionViewCellProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCellProvider.swift; sourceTree = "<group>"; };
+		13596D692AD070F500A002E2 /* HomeSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSection.swift; sourceTree = "<group>"; };
+		13596D6B2AD075A700A002E2 /* SectionHeaderReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderReusableView.swift; sourceTree = "<group>"; };
+		13596D6E2AD1563E00A002E2 /* HomeViewModelInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelInput.swift; sourceTree = "<group>"; };
+		13596D702AD15D9400A002E2 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		13596D722AD15E1800A002E2 /* HomeViewModelOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelOutput.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				13596D472AD041C800A002E2 /* Array+Extension.swift */,
+				13596D702AD15D9400A002E2 /* String+Extensions.swift */,
 				13596D2B2ACF5DC700A002E2 /* UIApplication+Extensions.swift */,
 				13596D2D2ACF5E9700A002E2 /* UIView+Extensions.swift */,
 			);
@@ -266,6 +283,8 @@
 			isa = PBXGroup;
 			children = (
 				13596D552AD0668D00A002E2 /* HomeController.swift */,
+				13596D612AD06A6800A002E2 /* Cell */,
+				13596D6D2AD075AC00A002E2 /* SectionHeaderReusableView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -282,8 +301,29 @@
 			isa = PBXGroup;
 			children = (
 				13596D572AD0669600A002E2 /* HomeViewModel.swift */,
+				13596D6E2AD1563E00A002E2 /* HomeViewModelInput.swift */,
+				13596D722AD15E1800A002E2 /* HomeViewModelOutput.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		13596D612AD06A6800A002E2 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				13596D622AD06A7C00A002E2 /* HomeCollectionViewCell.swift */,
+				13596D642AD06E2500A002E2 /* HomeCollectionViewCellDTO.swift */,
+				13596D662AD06E6F00A002E2 /* HomeCollectionViewCellProvider.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		13596D6D2AD075AC00A002E2 /* SectionHeaderReusableView */ = {
+			isa = PBXGroup;
+			children = (
+				13596D692AD070F500A002E2 /* HomeSection.swift */,
+				13596D6B2AD075A700A002E2 /* SectionHeaderReusableView.swift */,
+			);
+			path = SectionHeaderReusableView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -397,17 +437,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13596D6C2AD075A700A002E2 /* SectionHeaderReusableView.swift in Sources */,
+				13596D712AD15D9400A002E2 /* String+Extensions.swift in Sources */,
 				13596D532AD0625200A002E2 /* API.swift in Sources */,
+				13596D652AD06E2500A002E2 /* HomeCollectionViewCellDTO.swift in Sources */,
+				13596D672AD06E6F00A002E2 /* HomeCollectionViewCellProvider.swift in Sources */,
 				13596D512AD061FC00A002E2 /* Constant.swift in Sources */,
 				13596D562AD0668D00A002E2 /* HomeController.swift in Sources */,
 				13596D2E2ACF5E9700A002E2 /* UIView+Extensions.swift in Sources */,
 				13596D452AD0413B00A002E2 /* NetworkError.swift in Sources */,
+				13596D6F2AD1563E00A002E2 /* HomeViewModelInput.swift in Sources */,
+				13596D632AD06A7C00A002E2 /* HomeCollectionViewCell.swift in Sources */,
 				13596D2C2ACF5DC700A002E2 /* UIApplication+Extensions.swift in Sources */,
 				13596D5A2AD0669C00A002E2 /* HomeRouter.swift in Sources */,
 				13596D482AD041C800A002E2 /* Array+Extension.swift in Sources */,
 				13596D582AD0669600A002E2 /* HomeViewModel.swift in Sources */,
 				13596D282ACF5D2E00A002E2 /* LoadingManager.swift in Sources */,
+				13596D732AD15E1800A002E2 /* HomeViewModelOutput.swift in Sources */,
 				13596D5C2AD066A400A002E2 /* HomeBuilder.swift in Sources */,
+				13596D6A2AD070F500A002E2 /* HomeSection.swift in Sources */,
 				13596D332AD0222600A002E2 /* NetworkManager.swift in Sources */,
 				13596CEA2ACF3F4100A002E2 /* AppDelegate.swift in Sources */,
 				13596CEC2ACF3F4100A002E2 /* SceneDelegate.swift in Sources */,
