@@ -11,7 +11,13 @@ import Combine
 protocol HomeViewModelInput {
     var output: HomeViewModelOutput? { get set }
     var sectionsSubject: CurrentValueSubject<[HomeSection], Never> { get }
-    var stocks: [GetStocksByLimitQuery.Data.Stocks.Datum] { get }
+    var sectionsPublisher: AnyPublisher<[HomeSection], Never> { get }
+    var stocks: GetStocksByLimitQuery.Data.Stocks? { get }
+    var stockList: [GetStocksByLimitQuery.Data.Stocks.Datum] { get }
+    var hasMoreData: Bool { get }
+    var isFetching: Bool { get }
     
-    func fetchStocks(by limit: Int, cursor: String?)
+    func viewDidLoad()
+    func fetchStocks(cursor: String?)
+    func loadMoreStocks()
 }
