@@ -23,6 +23,10 @@ public enum SchemaMetadata: ApolloAPI.SchemaMetadata {
   public static func objectType(forTypename typename: String) -> Object? {
     switch typename {
     case "Query": return API.Objects.Query
+    case "StockDetailWithAggregates": return API.Objects.StockDetailWithAggregates
+    case "StockAggregates": return API.Objects.StockAggregates
+    case "StockAggregatesResult": return API.Objects.StockAggregatesResult
+    case "StockDetailAddress": return API.Objects.StockDetailAddress
     case "StockList": return API.Objects.StockList
     case "Stock": return API.Objects.Stock
     default: return nil

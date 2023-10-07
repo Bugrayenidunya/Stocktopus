@@ -1,0 +1,23 @@
+query GetStockDetailForTicker($ticker: String!, $timespan: String, $range: Int, $startDate: Date, $endDate: Date, $limit: Int) {
+  stockDetail(ticker: $ticker) {
+    stockAggregates(timespan: $timespan, range: $range, startDate: $startDate, endDate: $endDate, limit: $limit) {
+      results {
+        c
+        o
+        l
+        h
+      }
+    }
+    ticker
+    name
+    currency_name
+    description
+    homepage_url
+    address {
+      address1
+      city
+      state
+      postal_code
+    }
+  }
+}

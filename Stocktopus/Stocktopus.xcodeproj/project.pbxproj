@@ -39,6 +39,7 @@
 		13596D732AD15E1800A002E2 /* HomeViewModelOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13596D722AD15E1800A002E2 /* HomeViewModelOutput.swift */; };
 		13596D762AD174BC00A002E2 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13596D752AD174BC00A002E2 /* AlertManager.swift */; };
 		13596D782AD1EB3200A002E2 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13596D772AD1EB3200A002E2 /* Alert.swift */; };
+		13596D7A2AD1FD1A00A002E2 /* GetStockDetailForTicker.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 13596D792AD1FD1A00A002E2 /* GetStockDetailForTicker.graphql */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,7 @@
 		13596D722AD15E1800A002E2 /* HomeViewModelOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelOutput.swift; sourceTree = "<group>"; };
 		13596D752AD174BC00A002E2 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		13596D772AD1EB3200A002E2 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		13596D792AD1FD1A00A002E2 /* GetStockDetailForTicker.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = GetStockDetailForTicker.graphql; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +190,7 @@
 		13596D1F2ACF598C00A002E2 /* Queries */ = {
 			isa = PBXGroup;
 			children = (
+				13596D792AD1FD1A00A002E2 /* GetStockDetailForTicker.graphql */,
 				13596D202ACF59B300A002E2 /* GetStocksByLimit.graphql */,
 			);
 			path = Queries;
@@ -434,6 +437,7 @@
 				13596D212ACF59B300A002E2 /* GetStocksByLimit.graphql in Resources */,
 				13596CF62ACF3F4200A002E2 /* LaunchScreen.storyboard in Resources */,
 				13596CF32ACF3F4200A002E2 /* Assets.xcassets in Resources */,
+				13596D7A2AD1FD1A00A002E2 /* GetStockDetailForTicker.graphql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
