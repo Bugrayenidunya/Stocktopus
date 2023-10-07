@@ -11,4 +11,5 @@ public enum NetworkError: Error {
     case invalidResponse
     case networkError(Error)
     case graphQLErrors([GraphQLError], String)
+    case apiCallLimitExceeded
 }
