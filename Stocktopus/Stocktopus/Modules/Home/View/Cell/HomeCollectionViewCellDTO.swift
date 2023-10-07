@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct HomeCollectionViewCellDTO: HomeCollectionViewCellProvider {
+struct HomeCollectionViewCellDTO: HomeCollectionViewCellProvider, Hashable {
     var ticker: String
     var companyName: String
 }
