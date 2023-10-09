@@ -19,5 +19,8 @@ query GetStockDetailForTicker($ticker: String!, $timespan: String, $range: Int, 
       state
       postal_code
     }
+    branding {
+      logo_url
+    }
   }
 }

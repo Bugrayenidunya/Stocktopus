@@ -27,6 +27,7 @@ public enum SchemaMetadata: ApolloAPI.SchemaMetadata {
     case "StockAggregates": return API.Objects.StockAggregates
     case "StockAggregatesResult": return API.Objects.StockAggregatesResult
     case "StockDetailAddress": return API.Objects.StockDetailAddress
+    case "StockDetailBranding": return API.Objects.StockDetailBranding
     case "StockList": return API.Objects.StockList
     case "Stock": return API.Objects.Stock
     default: return nil

@@ -7,7 +7,7 @@ public class GetStockDetailForTickerQuery: GraphQLQuery {
   public static let operationName: String = "GetStockDetailForTicker"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query GetStockDetailForTicker($ticker: String!, $timespan: String, $range: Int, $startDate: Date, $endDate: Date, $limit: Int) { stockDetail(ticker: $ticker) { __typename stockAggregates( timespan: $timespan range: $range startDate: $startDate endDate: $endDate limit: $limit ) { __typename results { __typename c o l h } } ticker name currency_name description homepage_url address { __typename address1 city state postal_code } } }"#
+      #"query GetStockDetailForTicker($ticker: String!, $timespan: String, $range: Int, $startDate: Date, $endDate: Date, $limit: Int) { stockDetail(ticker: $ticker) { __typename stockAggregates( timespan: $timespan range: $range startDate: $startDate endDate: $endDate limit: $limit ) { __typename results { __typename c o l h } } ticker name currency_name description homepage_url address { __typename address1 city state postal_code } branding { __typename logo_url } } }"#
     ))
 
   public var ticker: String
@@ -76,6 +76,7 @@ public class GetStockDetailForTickerQuery: GraphQLQuery {
         .field("description", String?.self),
         .field("homepage_url", String?.self),
         .field("address", Address?.self),
+        .field("branding", Branding?.self),
       ] }
 
       public var stockAggregates: StockAggregates? { __data["stockAggregates"] }
@@ -85,6 +86,7 @@ public class GetStockDetailForTickerQuery: GraphQLQuery {
       public var description: String? { __data["description"] }
       public var homepage_url: String? { __data["homepage_url"] }
       public var address: Address? { __data["address"] }
+      public var branding: Branding? { __data["branding"] }
 
       /// StockDetail.StockAggregates
       ///
@@ -144,6 +146,22 @@ public class GetStockDetailForTickerQuery: GraphQLQuery {
         public var city: String { __data["city"] }
         public var state: String? { __data["state"] }
         public var postal_code: String? { __data["postal_code"] }
+      }
+
+      /// StockDetail.Branding
+      ///
+      /// Parent Type: `StockDetailBranding`
+      public struct Branding: API.SelectionSet {
+        public let __data: DataDict
+        public init(_dataDict: DataDict) { __data = _dataDict }
+
+        public static var __parentType: ApolloAPI.ParentType { API.Objects.StockDetailBranding }
+        public static var __selections: [ApolloAPI.Selection] { [
+          .field("__typename", String.self),
+          .field("logo_url", String?.self),
+        ] }
+
+        public var logo_url: String? { __data["logo_url"] }
       }
     }
   }
