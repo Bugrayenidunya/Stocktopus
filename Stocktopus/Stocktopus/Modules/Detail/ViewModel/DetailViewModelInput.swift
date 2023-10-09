@@ -11,8 +11,8 @@ import DGCharts
 
 protocol DetailViewModelInput {
     var output: DetailViewModelOutput? { get set }
-    var stockDetailSubject: PassthroughSubject<StockDetailDTO, Never> { get }
-    var stockDetailPublisher: AnyPublisher<StockDetailDTO, Never> { get }
+    var stockDetailSubject: PassthroughSubject<StockDetailProvider, Never> { get }
+    var stockDetailPublisher: AnyPublisher<StockDetailProvider, Never> { get }
     var chartDataSubject: PassthroughSubject<CandleChartData, Never> { get }
     var chartDataPublisher: AnyPublisher<CandleChartData, Never> { get }
     

@@ -19,10 +19,10 @@ final class DetailViewModel: DetailViewModelInput {
     private let router: DetailRouting
     private let ticker: String
     private var cancallables: [AnyCancellable] = []
-    @Published private(set) var stockDetailSubject = PassthroughSubject<StockDetailDTO, Never>()
+    @Published private(set) var stockDetailSubject = PassthroughSubject<StockDetailProvider, Never>()
     @Published private(set) var chartDataSubject = PassthroughSubject<CandleChartData, Never>()
     
-    var stockDetailPublisher: AnyPublisher<StockDetailDTO, Never> {
+    var stockDetailPublisher: AnyPublisher<StockDetailProvider, Never> {
         stockDetailSubject.eraseToAnyPublisher()
     }
     
@@ -80,31 +80,28 @@ final class DetailViewModel: DetailViewModelInput {
     }
     
     func generateChartData(for stockDetail: GetStockDetailForTickerQuery.Data.StockDetail) {
-        if let dataPoints = stockDetail.stockAggregates?.results {
-            var candleDataEntries: [CandleChartDataEntry] = []
-
-            for (index, dataPoint) in dataPoints.enumerated() {
-                guard let dataPoint else { return }
+        guard let dataPoints = stockDetail.stockAggregates?.results else { return }
+        
+        var candleDataEntries: [CandleChartDataEntry] = []
+        dataPoints.enumerated().forEach { index, dataPoint in
             
-                if let open = dataPoint.o, let close = dataPoint.c,  let high = dataPoint.h, let low = dataPoint.l {
-                    let entry = CandleChartDataEntry(x: Double(index), shadowH: high, shadowL: low, open: open, close: close)
-                    candleDataEntries.append(entry)
-                }
+            guard
+                let open = dataPoint?.o,
+                let close = dataPoint?.c,
+                let high = dataPoint?.h,
+                let low = dataPoint?.l
+            else {
+                return
             }
-
-            let set1 = CandleChartDataSet(entries: candleDataEntries)
-            set1.axisDependency = .left
-            set1.drawIconsEnabled = false
-            set1.shadowColor = .darkGray
-            set1.shadowWidth = 0.7
-            set1.decreasingColor = .red
-            set1.decreasingFilled = true
-            set1.increasingColor = .green
-            set1.increasingFilled = true
-            set1.neutralColor = .blue
-
-            let data = CandleChartData(dataSet: set1)
-            self.chartDataSubject.send(data)
+            
+            let entry = CandleChartDataEntry(x: Double(index), shadowH: high, shadowL: low, open: open, close: close)
+            candleDataEntries.append(entry)
         }
+        
+        let dataSet = CandleChartDataSet(entries: candleDataEntries)
+        dataSet.setStocktopusTheme()
+        
+        let data = CandleChartData(dataSet: dataSet)
+        self.chartDataSubject.send(data)
     }
 }

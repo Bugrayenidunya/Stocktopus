@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		134B80C52AD4A50900DDE5FA /* StockDetailProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134B80C42AD4A50900DDE5FA /* StockDetailProvider.swift */; };
+		134B80C72AD4A7DA00DDE5FA /* CandleChartDataSet+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134B80C62AD4A7DA00DDE5FA /* CandleChartDataSet+Extensions.swift */; };
 		13596CEA2ACF3F4100A002E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13596CE92ACF3F4100A002E2 /* AppDelegate.swift */; };
 		13596CEC2ACF3F4100A002E2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13596CEB2ACF3F4100A002E2 /* SceneDelegate.swift */; };
 		13596CF32ACF3F4200A002E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13596CF22ACF3F4200A002E2 /* Assets.xcassets */; };
@@ -65,6 +67,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		134B80C42AD4A50900DDE5FA /* StockDetailProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDetailProvider.swift; sourceTree = "<group>"; };
+		134B80C62AD4A7DA00DDE5FA /* CandleChartDataSet+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CandleChartDataSet+Extensions.swift"; sourceTree = "<group>"; };
 		13596CE62ACF3F4100A002E2 /* Stocktopus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stocktopus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13596CE92ACF3F4100A002E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13596CEB2ACF3F4100A002E2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -226,8 +230,8 @@
 			isa = PBXGroup;
 			children = (
 				13596D742AD174B300A002E2 /* AlertManager */,
-				13596D312ACFF91A00A002E2 /* NetworkManager */,
 				13596D262ACF5CF000A002E2 /* LoadingManager */,
+				13596D312ACFF91A00A002E2 /* NetworkManager */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -253,6 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				13596D472AD041C800A002E2 /* Array+Extension.swift */,
+				134B80C62AD4A7DA00DDE5FA /* CandleChartDataSet+Extensions.swift */,
 				13596DEC2AD2B4BD00A002E2 /* Date+Extensions.swift */,
 				13596D702AD15D9400A002E2 /* String+Extensions.swift */,
 				13596D2B2ACF5DC700A002E2 /* UIApplication+Extensions.swift */,
@@ -413,6 +418,7 @@
 				13596D862AD1FE7200A002E2 /* DetailViewModelInput.swift */,
 				13596D882AD1FE7D00A002E2 /* DetailViewModelOutput.swift */,
 				13596DF42AD428CF00A002E2 /* StockDetailDTO.swift */,
+				134B80C42AD4A50900DDE5FA /* StockDetailProvider.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -552,11 +558,13 @@
 				13596D2E2ACF5E9700A002E2 /* UIView+Extensions.swift in Sources */,
 				13596D452AD0413B00A002E2 /* NetworkError.swift in Sources */,
 				13596D6F2AD1563E00A002E2 /* HomeViewModelInput.swift in Sources */,
+				134B80C52AD4A50900DDE5FA /* StockDetailProvider.swift in Sources */,
 				13596D632AD06A7C00A002E2 /* HomeCollectionViewCell.swift in Sources */,
 				13596D2C2ACF5DC700A002E2 /* UIApplication+Extensions.swift in Sources */,
 				13596D5A2AD0669C00A002E2 /* HomeRouter.swift in Sources */,
 				13596D482AD041C800A002E2 /* Array+Extension.swift in Sources */,
 				13596D582AD0669600A002E2 /* HomeViewModel.swift in Sources */,
+				134B80C72AD4A7DA00DDE5FA /* CandleChartDataSet+Extensions.swift in Sources */,
 				13596D282ACF5D2E00A002E2 /* LoadingManager.swift in Sources */,
 				13596D812AD1FDF600A002E2 /* DetailController.swift in Sources */,
 				13596D732AD15E1800A002E2 /* HomeViewModelOutput.swift in Sources */,

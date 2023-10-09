@@ -8,7 +8,7 @@
 import API
 import UIKit
 
-struct StockDetailDTO {
+struct StockDetailDTO: StockDetailProvider {
     let ticker: String
     let name: String
     let logoUrl: String
@@ -37,8 +37,8 @@ extension StockDetailDTO {
     init(with stockDetail: GetStockDetailForTickerQuery.Data.StockDetail) {
         self.ticker = stockDetail.ticker
         self.description = stockDetail.description ?? .empty
-        self.address = stockDetail.address?.address1 ?? Constant.Message.noInfoData
-        self.currencyName = stockDetail.currency_name ?? Constant.Message.noAddressData
+        self.address = stockDetail.address?.address1 ?? Constant.Message.noAddressData
+        self.currencyName = stockDetail.currency_name?.uppercased() ?? Constant.Message.noInfoData
         self.name = stockDetail.name
         self.logoUrl = stockDetail.branding?.logo_url ?? .empty
         self.openPrice = stockDetail.stockAggregates?.results?.last??.c ?? .zero
