@@ -78,6 +78,11 @@ final class HomeViewModel: HomeViewModelInput, ObservableObject {
             }
             .store(in: &cancallables)
     }
+    
+    func didSelectItem(at index: Int) {
+        let selectedTicker = stockList[index].ticker
+        router.navigateToDetail(with: selectedTicker)
+    }
 }
 
 // MARK: - Helpers

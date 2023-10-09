@@ -20,4 +20,5 @@ protocol HomeViewModelInput {
     func viewDidLoad()
     func fetchStocks(cursor: String?)
     func loadMoreStocks()
+    func didSelectItem(at index: Int)
 }
