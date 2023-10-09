@@ -9,8 +9,12 @@ import Foundation
 
 extension Date {
     /// Get last business day date as String in format of "yyyy-MM-dd"
+    /// Timezone is euqal to "America/New_York"
     func getLastBusinessDay() -> String {
-        let calendar = Calendar.current
+        guard let timeZone = TimeZone(identifier: "America/New_York") else { return "2023-10-06" }
+        var calendar = Calendar.current
+        calendar.timeZone = timeZone
+        
         var currentDate = Date()
         let currentWeekday = calendar.component(.weekday, from: currentDate)
         
@@ -28,6 +32,7 @@ extension Date {
 
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.timeZone = timeZone
         let latestWorkdayString = dateFormatter.string(from: currentDate)
 
         return latestWorkdayString
