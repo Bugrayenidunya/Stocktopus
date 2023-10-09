@@ -94,6 +94,8 @@ private extension HomeController {
     }
     
     func setupView() {
+        navigationItem.title = "Stocktopus"
+        view.backgroundColor = .controllerBackground
         view.addSubview(collectionView)
         
         collectionView.setConstraint(
@@ -101,7 +103,7 @@ private extension HomeController {
             leading: view.leadingAnchor,
             bottom: view.bottomAnchor,
             trailing: view.trailingAnchor,
-            topConstraint: 16,
+            topConstraint: .zero,
             leadingConstraint: .zero,
             bottomConstraint: .zero,
             trailingConstraint: .zero
