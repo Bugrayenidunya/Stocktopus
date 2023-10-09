@@ -32,10 +32,10 @@ final class DetailController: UIViewController {
        let imageView = UIImageView()
         imageView.contentMode = .center
         imageView.image = UIImage(systemName: "photo")
-        imageView.tintColor = .black
+        imageView.tintColor = .primaryFont
         imageView.layer.cornerRadius = 28
-        imageView.layer.borderColor = UIColor.black.cgColor
-        imageView.layer.borderWidth = 3
+        imageView.layer.borderColor = UIColor.primaryFont.cgColor
+        imageView.layer.borderWidth = 2
         return imageView
     }()
     
@@ -158,7 +158,6 @@ private extension DetailController {
                 self.logoImageView.kf.setImage(with: imageURL, options: [
                     .processor(processor),
                     .loadDiskFileSynchronously,
-                    .cacheOriginalImage,
                     .transition(.fade(0.25))
                 ])
             }
