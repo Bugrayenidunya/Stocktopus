@@ -9,12 +9,24 @@ import UIKit
 
 // MARK: - HomeRouing
 protocol HomeRouing {
-    var navigationController: UINavigationController? { get set }
+    var viewController: UIViewController? { get set }
+    
+    func navigateToDetail(with ticker: String)
 }
 
 // MARK: - HomeRouter
 final class HomeRouter: HomeRouing {
     
     // MARK: Properties
-    weak var navigationController: UINavigationController?
+    weak var viewController: UIViewController?
+    
+    private var navigationController: UINavigationController? {
+        viewController?.navigationController
+    }
+    
+    // MARK: Functions
+    func navigateToDetail(with ticker: String) {
+        let detailController = DetailBuilder.build(with: ticker)
+        navigationController?.pushViewController(detailController, animated: true)
+    }
 }
