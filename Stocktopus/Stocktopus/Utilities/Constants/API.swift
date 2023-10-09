@@ -12,5 +12,6 @@ extension Constant {
         static let baseUrl = "https://interview-api.dev-getmidas.com/"
         static let fetchLimit = 50
         static let invalidResponseMessage = "Invalid Response"
+        static let polygonApiKey = "o9ncu4uiNhDxn6k739oWzFctvG6Xt71X"
     }
 }
