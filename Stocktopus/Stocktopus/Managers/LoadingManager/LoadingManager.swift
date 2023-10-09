@@ -33,7 +33,7 @@ final class LoadingManager: Loading {
     // MARK: Views
     private let loadingView: UIView = {
         let view = UIView()
-        view.backgroundColor = .black.withAlphaComponent(0.3)
+        view.backgroundColor = .primaryFont.withAlphaComponent(0.3)
         view.layer.cornerRadius = Constants.cornerRadius
         return view
     }()
