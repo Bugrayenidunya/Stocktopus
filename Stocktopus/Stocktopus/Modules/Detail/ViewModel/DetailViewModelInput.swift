@@ -5,8 +5,17 @@
 //  Created by Enes Buğra Yenidünya on 8.10.2023.
 //
 
-import Foundation
+import API
+import Combine
+import DGCharts
 
 protocol DetailViewModelInput {
     var output: DetailViewModelOutput? { get set }
+    var stockDetailSubject: PassthroughSubject<StockDetailDTO, Never> { get }
+    var stockDetailPublisher: AnyPublisher<StockDetailDTO, Never> { get }
+    var chartDataSubject: PassthroughSubject<CandleChartData, Never> { get }
+    var chartDataPublisher: AnyPublisher<CandleChartData, Never> { get }
+    
+    func viewDidLoad()
+    func fetchStockDetail(with ticker: String)
 }
