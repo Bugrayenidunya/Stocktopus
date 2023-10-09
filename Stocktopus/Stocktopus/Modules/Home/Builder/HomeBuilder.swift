@@ -19,6 +19,7 @@ final class HomeBuilder {
         
         viewModel.output = controller
         alertManager.controller = controller
+        router.viewController = controller
         
         return controller
     }
