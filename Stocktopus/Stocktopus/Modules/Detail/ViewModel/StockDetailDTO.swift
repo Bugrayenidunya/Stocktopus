@@ -41,8 +41,8 @@ extension StockDetailDTO {
         self.currencyName = stockDetail.currency_name?.uppercased() ?? Constant.Message.noInfoData
         self.name = stockDetail.name
         self.logoUrl = stockDetail.branding?.logo_url ?? .empty
-        self.openPrice = stockDetail.stockAggregates?.results?.last??.c ?? .zero
-        self.closePrice = stockDetail.stockAggregates?.results?.first??.o ?? .zero
+        self.openPrice = stockDetail.stockAggregates?.results?.first??.o ?? .zero
+        self.closePrice = stockDetail.stockAggregates?.results?.last??.c ?? .zero
         self.price = String(closePrice)
         
         let rate = ((closePrice - openPrice) / openPrice) * 100
