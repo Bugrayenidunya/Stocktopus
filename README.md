@@ -33,6 +33,6 @@ Just clone the Stocktopus repo and play with it. Be careful about the requiremen
 
 ## Author
 
-- Author: [Enes Bugra Yenidunya](https://github.com/yourusername)
+- Author: [Enes Bugra Yenidunya](https://github.com/bugrayenidunya)
 - Email: bugrayenidunya@gmail.com
 - LinkedIn: [Enes Bugra Yenidunya](https://www.linkedin.com/in/enes-bugra-yenidunya/)
