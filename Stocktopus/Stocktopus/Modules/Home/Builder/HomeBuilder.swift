@@ -17,7 +17,6 @@ final class HomeBuilder {
         let viewModel = HomeViewModel(router: router, networkManager: networManager, loadingManager: loadingManager, alertManager: alertManager)
         let controller = HomeController(viewModel: viewModel)
         
-        viewModel.output = controller
         alertManager.controller = controller
         router.viewController = controller
         

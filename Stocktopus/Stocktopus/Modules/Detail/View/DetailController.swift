@@ -134,11 +134,6 @@ final class DetailController: UIViewController {
     }
 }
 
-// MARK: - DetailViewModelOutput
-extension DetailController: DetailViewModelOutput {
-    
-}
-
 // MARK: - Helpers
 private extension DetailController {
     func setupSubscriptions() {

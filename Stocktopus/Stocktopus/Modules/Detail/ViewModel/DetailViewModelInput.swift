@@ -10,7 +10,6 @@ import Combine
 import DGCharts
 
 protocol DetailViewModelInput {
-    var output: DetailViewModelOutput? { get set }
     var stockDetailSubject: PassthroughSubject<StockDetailProvider, Never> { get }
     var stockDetailPublisher: AnyPublisher<StockDetailProvider, Never> { get }
     var chartDataSubject: PassthroughSubject<CandleChartData, Never> { get }

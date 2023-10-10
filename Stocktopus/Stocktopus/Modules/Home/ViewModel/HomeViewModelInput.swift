@@ -9,7 +9,6 @@ import API
 import Combine
 
 protocol HomeViewModelInput {
-    var output: HomeViewModelOutput? { get set }
     var sectionsSubject: CurrentValueSubject<[HomeSection], Never> { get }
     var sectionsPublisher: AnyPublisher<[HomeSection], Never> { get }
     var stocks: GetStocksByLimitQuery.Data.Stocks? { get }

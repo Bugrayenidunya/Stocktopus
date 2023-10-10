@@ -66,11 +66,6 @@ final class HomeController: UIViewController {
     }
 }
 
-// MARK: - HomeViewModelOutput
-extension HomeController: HomeViewModelOutput {
-    
-}
-
 // MARK: - UICollectionViewDelegate
 extension HomeController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

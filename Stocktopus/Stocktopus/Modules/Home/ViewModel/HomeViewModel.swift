@@ -28,8 +28,6 @@ final class HomeViewModel: HomeViewModelInput, ObservableObject {
         sectionsSubject.eraseToAnyPublisher()
     }
     
-    weak var output: HomeViewModelOutput?
-    
     // MARK: Init
     init(router: HomeRouing, networkManager: Networking, loadingManager: Loading, alertManager: AlertShowable) {
         self.router = router

@@ -16,7 +16,6 @@ final class DetailViewModel: DetailViewModelInput {
     private let loadingManager: Loading
     private let alertManager: AlertShowable
     private let networkManager: Networking
-    private let router: DetailRouting
     private let ticker: String
     private var cancallables: [AnyCancellable] = []
     @Published private(set) var stockDetailSubject = PassthroughSubject<StockDetailProvider, Never>()
@@ -30,14 +29,11 @@ final class DetailViewModel: DetailViewModelInput {
         chartDataSubject.eraseToAnyPublisher()
     }
     
-    weak var output: DetailViewModelOutput?
-    
     // MARK: Init
-    init(loadingManager: Loading, alertManager: AlertShowable, networkManager: Networking, router: DetailRouting, ticker: String) {
+    init(loadingManager: Loading, alertManager: AlertShowable, networkManager: Networking, ticker: String) {
         self.loadingManager = loadingManager
         self.alertManager = alertManager
         self.networkManager = networkManager
-        self.router = router
         self.ticker = ticker
     }
     
