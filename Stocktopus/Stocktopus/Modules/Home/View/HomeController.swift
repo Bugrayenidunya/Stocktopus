@@ -108,18 +108,18 @@ private extension HomeController {
     }
     
     func setupSubscriptions() {
-        viewModel.sectionsSubject
-            .sink(receiveValue: { section in
-                self.applySnapshot()
+        viewModel.sectionsPublisher
+            .sink(receiveValue: { sections in
+                self.applySnapshot(sections: sections)
             })
             .store(in: &cancallables)
     }
     
     /// Applies new data to dataSource
-    func applySnapshot(animatingDifferences: Bool = true) {
+    func applySnapshot(sections: [HomeSection], animatingDifferences: Bool = true) {
         var snapshot = Snapshot()
-        snapshot.appendSections(viewModel.sectionsSubject.value)
-        viewModel.sectionsSubject.value.forEach { section in
+        snapshot.appendSections(sections)
+        sections.forEach { section in
             snapshot.appendItems(section.items, toSection: section)
         }
         
