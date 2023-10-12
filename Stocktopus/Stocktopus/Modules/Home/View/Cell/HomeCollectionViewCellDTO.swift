@@ -9,6 +9,6 @@ import Foundation
 
 struct HomeCollectionViewCellDTO: HomeCollectionViewCellProvider, Hashable {
     let id = UUID()
-    var ticker: String
-    var companyName: String
+    let ticker: String
+    let companyName: String
 }

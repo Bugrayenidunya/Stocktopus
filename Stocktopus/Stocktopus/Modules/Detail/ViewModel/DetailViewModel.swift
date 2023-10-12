@@ -18,8 +18,9 @@ final class DetailViewModel: DetailViewModelInput {
     private let networkManager: Networking
     private let ticker: String
     private var cancallables: [AnyCancellable] = []
-    @Published private(set) var stockDetailSubject = PassthroughSubject<StockDetailProvider, Never>()
-    @Published private(set) var chartDataSubject = PassthroughSubject<CandleChartData, Never>()
+    
+    @Published private var stockDetailSubject = PassthroughSubject<StockDetailProvider, Never>()
+    @Published private var chartDataSubject = PassthroughSubject<CandleChartData, Never>()
     
     var stockDetailPublisher: AnyPublisher<StockDetailProvider, Never> {
         stockDetailSubject.eraseToAnyPublisher()

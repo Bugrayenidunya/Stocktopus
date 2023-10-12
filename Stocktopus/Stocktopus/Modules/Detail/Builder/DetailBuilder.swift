@@ -10,7 +10,7 @@ import Foundation
 final class DetailBuilder {
     static func build(with ticker: String) -> DetailController {
         let loadingManager = LoadingManager.shared
-        let alertManager = AlertManager.shared
+        var alertManager = AlertManager.shared
         let networkManager = NetworkManager.shared
         
         let viewModel = DetailViewModel(loadingManager: loadingManager, alertManager: alertManager, networkManager: networkManager, ticker: ticker)

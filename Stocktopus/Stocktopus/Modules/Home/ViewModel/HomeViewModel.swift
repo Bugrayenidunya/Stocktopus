@@ -21,8 +21,9 @@ final class HomeViewModel: HomeViewModelInput, ObservableObject {
     private(set) var stockList: [GetStocksByLimitQuery.Data.Stocks.Datum] = []
     private(set) var isFetching = false
     private(set) var hasMoreData = false
-    private(set) var stocks: GetStocksByLimitQuery.Data.Stocks?
-    @Published private(set) var sectionsSubject = CurrentValueSubject<[HomeSection], Never>([])
+    private(set) var latestCursor: String?
+    
+    @Published private var sectionsSubject = CurrentValueSubject<[HomeSection], Never>([])
     
     var sectionsPublisher: AnyPublisher<[HomeSection], Never> {
         sectionsSubject.eraseToAnyPublisher()
@@ -42,7 +43,7 @@ final class HomeViewModel: HomeViewModelInput, ObservableObject {
     
     func loadMoreStocks() {
         guard hasMoreData, !isFetching else { return }
-        fetchStocks(cursor: stocks?.cursor)
+        fetchStocks(cursor: latestCursor)
     }
     
     func fetchStocks(cursor: String? = nil) {
@@ -70,7 +71,7 @@ final class HomeViewModel: HomeViewModelInput, ObservableObject {
                     return
                 }
                 
-                self.stocks = stocks
+                self.latestCursor = stocks.cursor
                 hasMoreData = stocks.has_more
                 handleResponseData(stocks.data)
             }
