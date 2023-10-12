@@ -29,7 +29,7 @@ final class NetworkManager: Networking {
     // MARK: Functions
     func fetch<T: GraphQLQuery>(query: T) -> AnyPublisher<T.Data?, NetworkError> {
         Future<T.Data?, NetworkError> { promise in
-            self.apolloClient.fetch(query: query, cachePolicy: .returnCacheDataAndFetch) { result in
+            self.apolloClient.fetch(query: query, cachePolicy: .fetchIgnoringCacheData) { result in
                 switch result {
                 case .success(let graphQLResult):
                     guard graphQLResult.errors == nil else {
