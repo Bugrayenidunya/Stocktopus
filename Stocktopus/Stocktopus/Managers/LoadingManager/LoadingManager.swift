@@ -17,7 +17,7 @@ protocol Loading {
 final class LoadingManager: Loading {
     
     // MARK: Properties
-    static let shared: LoadingManager = .init()
+    static let shared: Loading = LoadingManager.init()
     
     enum Constants {
         static let cornerRadius = 8.0

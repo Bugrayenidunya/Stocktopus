@@ -17,13 +17,12 @@ protocol AlertShowable {
 final class AlertManager: AlertShowable {
     
     // MARK: Properties
-    static let shared: AlertManager = .init()
+    static let shared: AlertShowable = AlertManager.init()
     
     weak var controller: UIViewController?
     
     // MARK: Init
     private init() { }
-    
     
     func showAlert(with error: NetworkError) {
         let message = getMessageForNetworkError(error)
