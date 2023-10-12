@@ -11,7 +11,7 @@ final class HomeBuilder {
     static func build() -> HomeController {
         let networManager = NetworkManager.shared
         let loadingManager = LoadingManager.shared
-        let alertManager = AlertManager.shared
+        var alertManager = AlertManager.shared
         
         let router = HomeRouter()
         let viewModel = HomeViewModel(router: router, networkManager: networManager, loadingManager: loadingManager, alertManager: alertManager)

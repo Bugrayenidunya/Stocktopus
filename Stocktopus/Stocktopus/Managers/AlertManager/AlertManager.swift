@@ -10,6 +10,7 @@ import UIKit
 
 // MARK: - AlertShowable
 protocol AlertShowable {
+    var controller: UIViewController? { get set }
     func showAlert(with error: NetworkError)
 }
 
