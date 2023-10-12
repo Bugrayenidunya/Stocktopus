@@ -8,6 +8,6 @@
 import Foundation
 
 protocol HomeCollectionViewCellProvider {
-    var ticker: String { get set }
-    var companyName: String { get set }
+    var ticker: String { get }
+    var companyName: String { get }
 }
