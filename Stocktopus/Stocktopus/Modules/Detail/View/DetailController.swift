@@ -137,7 +137,9 @@ final class DetailController: UIViewController {
 // MARK: - Helpers
 private extension DetailController {
     func setupSubscriptions() {
-        viewModel.stockDetailPublisher.sink { stockDetail in
+        viewModel.stockDetailPublisher.sink { [weak self] stockDetail in
+            guard let self else { return }
+            
             self.navigationItem.title = stockDetail.name
             self.tickerLabel.text = stockDetail.ticker
             self.priceLabel.text = "\(stockDetail.price) \(stockDetail.currencyName)"
@@ -159,7 +161,9 @@ private extension DetailController {
         }
         .store(in: &cancallables)
         
-        viewModel.chartDataPublisher.sink { chartData in
+        viewModel.chartDataPublisher.sink { [weak self] chartData in
+            guard let self else { return }
+            
             self.candlestickChartView.data = chartData
             self.candlestickChartView.notifyDataSetChanged()
         }
